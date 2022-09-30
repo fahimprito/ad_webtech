@@ -30,7 +30,16 @@ class PagesController extends Controller
         ->with('dob', $dob)
         ->with('names', $names); 
     }
+    public function aboutus(){
+        $message = "Welcome Using Variable";
+        return view('aboutus')->with('message', $message);
+    }
 
+
+    public function contactus(){
+        $message = "Welcome Using Variable";
+        return view('contactus')->with('message', $message);
+    }
 
 
 }

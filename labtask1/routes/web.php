@@ -29,3 +29,5 @@ Route::get('/homepage', function () {
 Route::get('/home', [PagesController::class, 'index'])->name('home');
 Route::get('/product', [PagesController::class, 'service'])->name('product');
 Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
+Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
+Route::get('/contactus', [PagesController::class, 'contactus'])->name('contactus');
