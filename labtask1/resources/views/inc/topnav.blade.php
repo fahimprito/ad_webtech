@@ -1,5 +1,12 @@
-<a class="btn btn-primary" href="{{route('home')}}">Home</a>
-<a class="btn btn-primary" href="{{route('product')}}">Product</a>
-<a class="btn btn-primary" href="{{route('profile')}}">Our teams</a>
-<a class="btn btn-primary" href="{{route('aboutus')}}">About us</a> 
-<a class="btn btn-primary" href="{{route('contactus')}}">Contact us</a>
+<div class="shadow navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+
+    <a class="btn btn-info" href="{{route('home')}}"><h2>Home</h2></a>
+    <a class="btn btn-info" href="{{route('product')}}"><h2>Product</h2></a>
+    <a class="btn btn-info" href="{{route('profile')}}"><h2>Our teams</h2></a>
+    <a class="btn btn-info" href="{{route('aboutus')}}"><h2>About us</h2></a> 
+    <a class="btn btn-info" href="{{route('contactus')}}"><h2>Contact us</h2></a>
+
+</div>
+
+
+
