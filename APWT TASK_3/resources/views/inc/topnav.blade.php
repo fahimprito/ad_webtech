@@ -11,6 +11,9 @@
         <a class="nav-item nav-link " href="{{route('aboutus')}}"><b>About us</b></a> 
         <a class="nav-item nav-link " href="{{route('studentList')}}"><b>Student List</b></a>
         <a class="nav-item nav-link " href="{{route('studentCreate')}}"><b>Create Student</b></a>
+
+        <a class="nav-item nav-link" href="{{route('teacherList')}}">Teacher List</a>
+        <a class="nav-item nav-link" href="{{route('teacherCreate')}}">Teacher Create</a>
     </div>
     
 
@@ -21,4 +24,6 @@
     </div>
   </div>
 </nav>
+
+
 

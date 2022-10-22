@@ -5,6 +5,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\userController;
 
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CourseController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +58,14 @@ Route::post('/registration',[userController::class,"registrationSubmitted"])->na
 
 Route::get('/contact', [userController::class, 'contact'])->name('contact');
 Route::post('/contact',[userController::class,"contactSubmitted"])->name("contact");
+
+
+////Teacher
+Route::get('/teacherCreate',[TeacherController::class, 'teacherCreate'])->name('teacherCreate');
+Route::post('/teacherCreate',[TeacherController::class, 'teacherCreateSubmitted'])->name('teacherCreate');
+Route::get('/teacherList',[TeacherController::class, 'teacherList'])->name('teacherList');
+
+//Teacher Course
+Route::get('/teacher/courses',[TeacherController::class,'teacherCourses'])->name('teacher.courses');
+//course
+Route::get('/courses',[CourseController::class,'courseTeacher'])->name('teacher.courses'); 
