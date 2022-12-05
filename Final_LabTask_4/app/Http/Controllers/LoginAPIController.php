@@ -104,5 +104,17 @@ class LoginAPIController extends Controller
         }
         return "No user found";
 
+        
+
+    }
+    public function  logout(Request $req){
+
+        $token = Token::where('token',$req->token)->first();
+        if($token){
+            $token->expired_at =new DateTime();
+            $token->save();
+            return $token;
+        }
+
     }
 }
