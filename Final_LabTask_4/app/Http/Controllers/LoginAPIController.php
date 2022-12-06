@@ -7,7 +7,7 @@ use App\Http\Requests\StoreLoginAPIRequest;
 use App\Http\Requests\UpdateLoginAPIRequest;
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use App\Models\Token;
+use App\Models\TokenAPI;
 use Illuminate\Support\Str;
 use DateTime;
 
@@ -91,16 +91,17 @@ class LoginAPIController extends Controller
 
     public function  login(Request $req){
 
-        $user = Customer::where('name',$req->username)->where('password',$req->password)->first();
+        $user = Customer::where('username',$req->username)->where('password',$req->password)->first();
 
         if($user){
             $api_token = Str::random(64);
-            $token = new Token();
+            $token = new TokenAPI();
             $token->userid = $user->id;
             $token->token = $api_token;
             $token->created_at = new DateTime();
             $token->save();
             return $token;
+            
         }
         return "No user found";
 
@@ -109,9 +110,9 @@ class LoginAPIController extends Controller
     }
     public function  logout(Request $req){
 
-        $token = Token::where('token',$req->token)->first();
+        $token = TokenAPI::where('token',$req->token)->first();
         if($token){
-            $token->expired_at =new DateTime();
+            $token->updated_at =new DateTime();
             $token->save();
             return $token;
         }

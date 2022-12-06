@@ -20,9 +20,11 @@ const Login = ()=>{
             localStorage.setItem('user',JSON.stringify(user));
             console.log(localStorage.getItem('user'));
 
+            
             if (token == "No user found"){
                 navigate('/login');
-            }else{
+            }
+            else{
                 navigate('/products')
             }
             

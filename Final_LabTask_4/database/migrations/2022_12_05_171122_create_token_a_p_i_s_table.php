@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('token_a_p_i_s', function (Blueprint $table) {
             $table->id();
+            $table->integer('userid');
+            $table->string('token');
             $table->timestamps();
         });
     }

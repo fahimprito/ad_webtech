@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\TokenAPI;
 
 class APIAuth
 {
@@ -18,11 +19,12 @@ class APIAuth
     {
         $token = $request->header("Authorization");
         $token = json_decode($token);
-        $check_token = Token::where('token',$token->access_token)->where('expired_at',NULL)->first();
+        $check_token = TokenAPI::where('token',$token->access_token)->where('updated_at',NULL)->first();
         if ($check_token) {
             return $next($request);
 
         }
         else return response("Invalid token",401);
+        
     }
 }
