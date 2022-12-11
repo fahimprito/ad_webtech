@@ -99,8 +99,18 @@ class LoginAPIController extends Controller
             $token->userid = $user->id;
             $token->token = $api_token;
             $token->created_at = new DateTime();
-            $token->save();
-            return $token;
+            $succ=$token->save();
+            
+
+            if($succ){
+                return response()->json(
+                    [
+                        "msg"=>"login Successfully",
+                        "token"=>$token,
+                    ]
+                );
+            }
+            
             
         }
         return "No user found";
